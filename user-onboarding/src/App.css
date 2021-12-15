@@ -4,10 +4,15 @@
 
 .form-content{
   width: 70%;
-  margin: 100px auto 20px;
+  margin: 20px auto 50px;
   padding: 20px;
   box-shadow: 0px 0px 20px 0px rgba(0,0,0,0.3);
   border-radius: 10px;
+}
+
+.errors p{
+  color: crimson;
+  margin: -5px 0 10px;
 }
 
 .input{
@@ -20,7 +25,26 @@
   border-radius: none;
 }
 
+label span{
+  text-decoration: underline;
+  cursor: pointer;
+  margin-left: 5px;
+  margin-bottom: 5px;
+}
+
 .form-button{
   width: 80%;
   margin: 30px 10%;
+}
+
+/* User Tab Component */
+.user-tab{
+  width: 90%;
+  margin: 0 auto 20px;
+  background-color: rgb(223, 223, 223);
+  padding: 20px;
+}
+
+.user-tab p {
+  margin-bottom: 0;
 }

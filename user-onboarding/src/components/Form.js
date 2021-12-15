@@ -1,39 +1,78 @@
 import '../App.css';
 
 
-const Form = () => {
+const Form = (props) => {
+    const { values, change, submit, disabled, errors } = props;
+
+    const onSubmit = (event) => {
+        event.preventDefault();
+        submit();
+    };
+
+    const onChange = (event) => {
+        const { name, value, checked, type } = event.target;
+        const valueToUse = type === 'checkbox' ? checked : value;
+        change(name, valueToUse);
+    }
+
     return (
-        <form className='form-content'>
-            <h1>Hello</h1>
+        <form className='form-content' onSubmit={onSubmit}>
+            <h1>Create User</h1>
             <label>
                 Name:
                 <input
                     className='input'
+                    placeholder='Enter your name'
                     type='text'
-                    placeholder='Name'
+                    name='name'
+                    onChange={onChange}
+                    value={values.name}
                 />
             </label>
+            <div className='errors'>
+                <p>{errors.name}</p>
+            </div>
             <label>
                 Email:
                 <input
                     className='input'
-                    type='email'
-                    placeholder='Email'
+                    placeholder='Enter your email'
+                    type='text'
+                    name='email'
+                    onChange={onChange}
+                    value={values.email}
                 />
             </label>
+            <div className='errors'>
+                <p>{errors.email}</p>
+            </div>
             <label>
                 Password:
                 <input
                     className='input'
+                    placeholder='Enter a password'
                     type='password'
-                    placeholder='Password'
+                    name='password'
+                    onChange={onChange}
+                    value={values.password}
                 />
             </label>
+            <div className='errors'>
+                <p>{errors.password}</p>
+            </div>
             <label>
-                <input type='checkbox' />
-                Agree to Terms of Service
+                <input
+                    type='checkbox'
+                    name='terms'
+                    onChange={onChange}
+                    value={values.terms}
+                />
+                <span>Agree to Terms of Service</span>
             </label>
-            <button className='form-button'>Add User</button>
+            <div className='errors'>
+                <p>{errors.terms}</p>
+            </div>
+            <button className='form-button' disabled={disabled}>Create User</button>
         </form>
     );
 }
