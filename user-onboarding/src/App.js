@@ -18,12 +18,13 @@ const initialFormValues = {
 }
 
 const initialUsers = [
-  // {name: 'Dylan', email: 'dylan@yahoo.com', password: 'password', terms: true}
+  {name: 'Dylan', email: 'dylan@yahoo.com', password: 'password', terms: true},
+  {name: 'Dylan', email: 'dylan@yahoo.com', password: 'password', terms: true}
 ]
 
 function App() {
   const [formValues, setFormValues] = useState(initialFormValues);
-  const [users, setUsers] = useState([]);
+  const [users, setUsers] = useState(initialUsers);
   const [formErrors, setFormErrors] = useState(initialFormValues);
   const [disabled, setDisabled] = useState(true);
 
@@ -81,7 +82,7 @@ function App() {
         disabled={disabled}
         errors={formErrors}
       />
-      {users.length > 0 && <h3><center>Users</center></h3>}
+      {users.length > 0 ? (users.length === 1 ? <h3><center>User</center></h3> : <h3><center>Users</center></h3>) : null}
       {users.map((user, index) => <UserTab key={index} user={user} /> )}
       
     </div>
