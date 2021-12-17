@@ -55,4 +55,15 @@ describe('User Onboarding', () => {
       createButton().click();
     })
   })
+
+  describe('check that error message shows up when text is empty', () => {
+    it('can check form validation on name', () => {
+      createButton().should('be.disabled');
+      nameInput().type('Dylan');
+      // No email text is filled out
+      passInput().type('password');
+      termsInput().click();
+      createButton().should('be.disabled');
+    })
+  })
 })
