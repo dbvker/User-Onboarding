@@ -18,8 +18,8 @@ const initialFormValues = {
 }
 
 const initialUsers = [
-  {name: 'Dylan', email: 'dylan@yahoo.com', password: 'password', terms: true},
-  {name: 'Dylan', email: 'dylan@yahoo.com', password: 'password', terms: true}
+  // {name: 'Dylan', email: 'dylan@yahoo.com', password: 'password', terms: true},
+  // {name: 'Dylan', email: 'dylan@yahoo.com', password: 'password', terms: true}
 ]
 
 function App() {

@@ -7,7 +7,8 @@ const UserTab = (props) => {
     return(
         <div className="user-tab">
             <b>{user.name}</b>
-            <p>{user.email}</p>
+            <p>Email: {user.email}</p>
+            <p>Password: {user.password}</p>
         </div>
     )
 };
