@@ -1,0 +1,8 @@
+{
+  "short_name": "Onboarding Users App",
+  "name": "Onboarding Users App",
+  "start_url": ".",
+  "display": "standalone",
+  "theme_color": "#ffffff",
+  "background_color": "#ffffff"
+}
